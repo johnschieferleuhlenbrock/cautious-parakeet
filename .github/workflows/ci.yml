@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, copilot/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio
+    
+    - name: Run tests
+      run: |
+        pytest tests/ -v
+    
+    - name: Check Python syntax
+      run: |
+        python -m py_compile custom_components/ha_mcp_server/*.py
+
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate JSON files
+      run: |
+        python -c "import json; files=['hacs.json', 'custom_components/ha_mcp_server/manifest.json', 'custom_components/ha_mcp_server/strings.json', 'custom_components/ha_mcp_server/translations/en.json']; [print(f'{f}: OK') if json.load(open(f)) else None for f in files]"
