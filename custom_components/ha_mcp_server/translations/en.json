@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Home Assistant MCP Server",
+        "description": "Set up the MCP server for configuration file access.",
+        "data": {
+          "port": "Server Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to MCP server",
+      "invalid_auth": "Invalid authentication",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Home Assistant MCP Server is already configured"
+    }
+  }
+}

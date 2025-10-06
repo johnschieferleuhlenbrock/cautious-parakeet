@@ -1,0 +1,10 @@
+# Requirements for Home Assistant MCP Server
+
+# MCP (Model Context Protocol) support
+mcp>=0.1.0
+
+# Async file operations
+aiofiles>=23.1.0
+
+# YAML parsing
+PyYAML>=6.0

@@ -1,0 +1,79 @@
+# MCP Server Services
+
+read_config:
+  name: Read Configuration File
+  description: Read a Home Assistant configuration file
+  fields:
+    filename:
+      name: Filename
+      description: Name of the configuration file to read (e.g., configuration.yaml)
+      required: true
+      example: "configuration.yaml"
+      selector:
+        text:
+
+write_config:
+  name: Write Configuration File
+  description: Write to a Home Assistant configuration file
+  fields:
+    filename:
+      name: Filename
+      description: Name of the configuration file to write
+      required: true
+      example: "automations.yaml"
+      selector:
+        text:
+    content:
+      name: Content
+      description: Content to write to the file (YAML or JSON format)
+      required: true
+      selector:
+        object:
+
+list_configs:
+  name: List Configuration Files
+  description: List all configuration files in the Home Assistant config directory
+
+get_config_value:
+  name: Get Configuration Value
+  description: Get a specific value from a configuration file
+  fields:
+    filename:
+      name: Filename
+      description: Name of the configuration file
+      required: true
+      example: "configuration.yaml"
+      selector:
+        text:
+    key_path:
+      name: Key Path
+      description: Dot-separated path to the configuration key (e.g., homeassistant.name)
+      required: true
+      example: "homeassistant.name"
+      selector:
+        text:
+
+set_config_value:
+  name: Set Configuration Value
+  description: Set a specific value in a configuration file
+  fields:
+    filename:
+      name: Filename
+      description: Name of the configuration file
+      required: true
+      example: "configuration.yaml"
+      selector:
+        text:
+    key_path:
+      name: Key Path
+      description: Dot-separated path to the configuration key
+      required: true
+      example: "homeassistant.name"
+      selector:
+        text:
+    value:
+      name: Value
+      description: Value to set
+      required: true
+      selector:
+        text:
