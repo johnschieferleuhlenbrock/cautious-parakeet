@@ -8,6 +8,11 @@ This integration provides a Model Context Protocol (MCP) server for Home Assista
 
 - **Read Configuration Files**: Access Home Assistant YAML, JSON, and text configuration files
 - **Edit Configuration Files**: Modify configuration values programmatically
+- **User Management**: List and view Home Assistant users
+- **Integration Access**: View all configured integrations and their details
+- **Device Management**: List and inspect devices
+- **Entity Operations**: Access, monitor, and control all entities
+- **Entity History**: Retrieve historical state data for entities
 - **Secure Access**: File access is restricted to the Home Assistant configuration directory
 - **MCP Protocol**: Implements the Model Context Protocol for standardized AI integration
 - **Easy Installation**: Install through HACS (Home Assistant Community Store)
