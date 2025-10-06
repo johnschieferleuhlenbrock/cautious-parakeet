@@ -1,0 +1,15 @@
+{
+  "domain": "ha_mcp_server",
+  "name": "Home Assistant MCP Server",
+  "version": "1.0.0",
+  "documentation": "https://github.com/johnschieferleuhlenbrock/cautious-parakeet",
+  "issue_tracker": "https://github.com/johnschieferleuhlenbrock/cautious-parakeet/issues",
+  "requirements": [
+    "mcp>=0.1.0",
+    "aiofiles>=23.1.0"
+  ],
+  "dependencies": [],
+  "codeowners": ["@johnschieferleuhlenbrock"],
+  "iot_class": "local_polling",
+  "config_flow": true
+}

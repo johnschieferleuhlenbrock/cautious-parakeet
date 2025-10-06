@@ -2,15 +2,15 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
-A Model Context Protocol (MCP) server integration for Home Assistant that enables AI assistants and other tools to read and edit Home Assistant configuration files through a standardized interface.
+This integration provides a Model Context Protocol (MCP) server for Home Assistant, enabling AI assistants and other tools to read and edit Home Assistant configuration files through a standardized interface.
 
 ## Features
 
-- 🔍 **Read Configuration Files**: Access Home Assistant YAML, JSON, and text configuration files
-- ✏️ **Edit Configuration Files**: Modify configuration values programmatically
-- 🔒 **Secure Access**: File access is restricted to the Home Assistant configuration directory
-- 🤖 **MCP Protocol**: Implements the Model Context Protocol for standardized AI integration
-- 📦 **Easy Installation**: Install through HACS (Home Assistant Community Store)
+- **Read Configuration Files**: Access Home Assistant YAML, JSON, and text configuration files
+- **Edit Configuration Files**: Modify configuration values programmatically
+- **Secure Access**: File access is restricted to the Home Assistant configuration directory
+- **MCP Protocol**: Implements the Model Context Protocol for standardized AI integration
+- **Easy Installation**: Install through HACS (Home Assistant Community Store)
 
 ## Installation
 
@@ -26,6 +26,7 @@ A Model Context Protocol (MCP) server integration for Home Assistant that enable
 8. Go to Configuration > Integrations
 9. Click "+ Add Integration"
 10. Search for "Home Assistant MCP Server"
+11. Configure the integration
 
 ### Manual Installation
 
@@ -44,7 +45,7 @@ The integration can be configured through the Home Assistant UI:
 
 ## Usage
 
-The MCP server provides the following capabilities:
+Once installed, the MCP server provides the following capabilities:
 
 ### Reading Configuration Files
 
@@ -69,29 +70,15 @@ await mcp_server.write_config_file("automations.yaml", {"automation": []})
 await mcp_server.set_config_value("configuration.yaml", "homeassistant.name", "My Home")
 ```
 
-## API Reference
-
-### MCPConfigServer Methods
-
-- `read_config_file(filename)`: Read a configuration file
-- `write_config_file(filename, content)`: Write to a configuration file
-- `list_config_files()`: List all configuration files
-- `get_config_value(filename, key_path)`: Get a specific value from a config file
-- `set_config_value(filename, key_path, value)`: Set a specific value in a config file
-
 ## Security
 
-- ✅ File access is restricted to the Home Assistant configuration directory
-- ✅ Path traversal attempts are blocked
-- ✅ Only common configuration file types are accessible (.yaml, .yml, .json, .conf, .txt)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- File access is restricted to the Home Assistant configuration directory
+- Path traversal attempts are blocked
+- Only common configuration file types are accessible (.yaml, .yml, .json, .conf, .txt)
 
 ## Support
 
-For issues, feature requests, or contributions, please visit the [GitHub repository](https://github.com/johnschieferleuhlenbrock/cautious-parakeet/issues).
+For issues, feature requests, or contributions, please visit the [GitHub repository](https://github.com/johnschieferleuhlenbrock/cautious-parakeet).
 
 ## License
 
