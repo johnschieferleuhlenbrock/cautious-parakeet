@@ -44,7 +44,61 @@ The integration can be configured through the Home Assistant UI:
 
 ## Usage
 
-The MCP server provides the following capabilities:
+The MCP server provides the following capabilities through both Python API and Home Assistant services:
+
+### Home Assistant Services
+
+Once installed, you can use the following services in Home Assistant:
+
+#### `ha_mcp_server.read_config`
+Read a configuration file.
+
+```yaml
+service: ha_mcp_server.read_config
+data:
+  filename: "configuration.yaml"
+```
+
+#### `ha_mcp_server.write_config`
+Write to a configuration file.
+
+```yaml
+service: ha_mcp_server.write_config
+data:
+  filename: "automations.yaml"
+  content:
+    automation: []
+```
+
+#### `ha_mcp_server.list_configs`
+List all configuration files.
+
+```yaml
+service: ha_mcp_server.list_configs
+```
+
+#### `ha_mcp_server.get_config_value`
+Get a specific value from a configuration file.
+
+```yaml
+service: ha_mcp_server.get_config_value
+data:
+  filename: "configuration.yaml"
+  key_path: "homeassistant.name"
+```
+
+#### `ha_mcp_server.set_config_value`
+Set a specific value in a configuration file.
+
+```yaml
+service: ha_mcp_server.set_config_value
+data:
+  filename: "configuration.yaml"
+  key_path: "homeassistant.name"
+  value: "My Smart Home"
+```
+
+### Python API
 
 ### Reading Configuration Files
 
