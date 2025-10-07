@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Home Assistant data access services for comprehensive system visibility
+  - `list_users` service - List all Home Assistant users
+  - `get_user` service - Get detailed user information
+  - `list_integrations` service - List all configured integrations
+  - `get_integration` service - Get detailed integration configuration
+  - `list_devices` service - List all devices (with optional domain filter)
+  - `get_device` service - Get detailed device information
+  - `list_entities` service - List all entities (with optional domain filter)
+  - `get_entity` service - Get entity state, attributes, and metadata
+  - `update_entity_state` service - Update entity state and attributes
+  - `get_entity_history` service - Retrieve historical entity state data
+- Enhanced documentation with new service examples
+- Additional example usage script for HA data access
+- Comprehensive test coverage for new services
+
 ## [1.0.0] - 2025-01-XX
 
 ### Added

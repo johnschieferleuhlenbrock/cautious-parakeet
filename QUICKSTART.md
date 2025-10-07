@@ -80,6 +80,34 @@ data:
   value: "My Smart Home"
 ```
 
+### Example: List All Users
+
+```yaml
+service: ha_mcp_server.list_users
+```
+
+### Example: List All Entities
+
+```yaml
+service: ha_mcp_server.list_entities
+```
+
+### Example: Get Entity Details
+
+```yaml
+service: ha_mcp_server.get_entity
+data:
+  entity_id: "light.living_room"
+```
+
+### Example: List Devices by Domain
+
+```yaml
+service: ha_mcp_server.list_devices
+data:
+  domain: "light"
+```
+
 ## Common Use Cases
 
 ### 1. Backup Configuration Before Editing
@@ -114,6 +142,36 @@ data:
           entity_id: sun.sun
         action:
           service: light.turn_on
+```
+
+### 4. Monitor Entity State Changes
+
+```yaml
+service: ha_mcp_server.get_entity_history
+data:
+  entity_id: "sensor.temperature"
+  start_time: "2024-01-01T00:00:00+00:00"
+```
+
+### 5. Audit System Configuration
+
+```yaml
+# List all integrations
+service: ha_mcp_server.list_integrations
+
+# List all users
+service: ha_mcp_server.list_users
+
+# List all devices
+service: ha_mcp_server.list_devices
+```
+
+### 6. Find Entities by Domain
+
+```yaml
+service: ha_mcp_server.list_entities
+data:
+  domain: "sensor"
 ```
 
 ## Security Best Practices
